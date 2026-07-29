@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RailPulse — Live Train Status, PNR and Station Alarm</title>
+<meta name="description" content="RailPulse shows where your Indian Railways train actually is, checks PNR status, and wakes you before your station so you never sleep past your stop.">
+<link rel="icon" href="assets/icon.png">
+<meta property="og:title" content="RailPulse — Live Train Status, PNR and Station Alarm">
+<meta property="og:description" content="Live train running status, PNR check, and an alarm that wakes you at your stop.">
+<meta property="og:image" content="https://railpulse.live/assets/icon.png">
+<meta property="og:url" content="https://railpulse.live/">
+<meta name="theme-color" content="#0E1222">
+<style>
+  :root{
+    --bg:#0E1222; --panel:#141A2E; --line:#232B45;
+    --text:#EAF0FF; --muted:#9AA6C4; --accent:#3DDCE8; --alarm:#FFB020;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px}
+  header{padding:56px 0 12px;text-align:center}
+  /* The logo art has its own dark backdrop baked in, so it sits in a dark
+     rounded plate. Without this it reads as a raw black rectangle in light
+     mode — the same fix the app uses for this asset. */
+  .plate{
+    display:inline-block;background:#0E1222;padding:14px 20px;
+    border-radius:14px;border:1px solid #232B45;line-height:0
+  }
+  .plate img{width:min(300px,72vw);height:auto;display:block}
+  h1{font-size:clamp(26px,5vw,40px);line-height:1.2;margin:26px 0 10px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:clamp(15px,2.4vw,19px);margin:0 auto;max-width:34ch}
+  .rule{height:3px;background:linear-gradient(90deg,transparent,var(--accent),transparent);margin:40px 0}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:8px 0 0}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 18px 20px}
+  .card h3{margin:0 0 6px;font-size:16px}
+  .card p{margin:0;color:var(--muted);font-size:14.5px}
+  .card.lead{border-color:rgba(255,176,32,.55);background:rgba(255,176,32,.07)}
+  .card.lead h3{color:var(--alarm)}
+  .note{
+    margin:40px 0 0;padding:16px 18px;border:1px solid var(--line);
+    border-radius:14px;background:var(--panel);color:var(--muted);font-size:14.5px
+  }
+  .note strong{color:var(--text)}
+  footer{margin:52px 0 44px;text-align:center;color:var(--muted);font-size:13.5px}
+  footer a{color:var(--accent);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+  .links{margin:0 0 14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .links a{
+    display:inline-block;padding:10px 18px;border:1px solid var(--line);
+    border-radius:10px;background:var(--panel);color:var(--text);
+    text-decoration:none;font-size:14.5px;font-weight:600
+  }
+  .links a:hover{border-color:var(--accent);text-decoration:none}
+  @media (prefers-color-scheme: light){
+    :root{--bg:#F6F8FC;--panel:#FFFFFF;--line:#DCE3F0;--text:#131A2C;--muted:#5A6684;--accent:#0E7C88}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="plate"><img src="assets/logo.png" alt="RailPulse"></span>
+    <h1>Never miss your station</h1>
+    <p class="sub">Live train status, PNR check, and an alarm that wakes you before your stop.</p>
+  </header>
+
+  <div class="rule"></div>
+
+  <div class="grid">
+    <div class="card lead">
+      <h3>Station alarm</h3>
+      <p>Rings 5–50&nbsp;km before the stop you choose — even without internet, even with the phone locked. No rush when you wake.</p>
+    </div>
+    <div class="card">
+      <h3>Live train status</h3>
+      <p>Where the train actually is: current and next station, delay, speed, and the full stop-by-stop timeline.</p>
+    </div>
+    <div class="card">
+      <h3>PNR status</h3>
+      <p>Booking status, coach and berth, boarding point, and chart preparation from your 10-digit PNR.</p>
+    </div>
+    <div class="card">
+      <h3>Seat availability</h3>
+      <p>Availability and fare across upcoming dates, with the chance of confirmation for waitlisted tickets.</p>
+    </div>
+    <div class="card">
+      <h3>Trains &amp; stations</h3>
+      <p>Direct trains between any two stations, station arrival boards, and the railway stations nearest to you.</p>
+    </div>
+    <div class="card">
+      <h3>SOS</h3>
+      <p>One tap to the official railway helplines — RPF 182, medical 138, Rail Madad 139 — or text your location to an emergency contact.</p>
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>Your location stays on your phone.</strong> It is used only to ring your
+    station alarm and to show nearby stations, and is never uploaded. There is no
+    account, no password and no tracking.
+  </div>
+
+  <footer>
+    <div class="links">
+      <a href="/privacy/">Privacy Policy</a>
+      <a href="mailto:atluridillu@gmail.com">Contact</a>
+    </div>
+    <p>
+      Coming soon to Google Play.<br>
+      RailPulse is an independent app. It is not official and is not affiliated with,
+      endorsed by, or connected to Indian Railways or IRCTC.
+    </p>
+    <p>© 2026 Dillu Atluri</p>
+  </footer>
+
+</div>
+</body>
+</html>
