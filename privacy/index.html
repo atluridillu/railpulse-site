@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,7 +71,7 @@
   <div class="wrap">
     <div class="kicker">RailPulse</div>
     <h1>Privacy Policy</h1>
-    <div class="meta">Effective date: 28 July 2026 &nbsp;·&nbsp; Last updated: 28 July 2026 &nbsp;·&nbsp; Developer: Dillu Atluri</div>
+    <div class="meta">Effective date: 17 August 2026 &nbsp;·&nbsp; Last updated: 17 August 2026 &nbsp;·&nbsp; Developer: Dillu Atluri</div>
   </div>
 </header>
 
@@ -87,31 +88,42 @@
 
 <h3>a) Location data (including background location)</h3>
 <div class="callout">
-  <strong>Prominent disclosure:</strong> The App collects location data to power the <strong>station alarm</strong> feature — to wake you before your train reaches your station — <strong>even when the App is closed or not in use</strong>. Background location is collected <em>only</em> while a station alarm is on, and stops when the alarm fires, is dismissed, or is turned off.
+  <strong>Prominent disclosure:</strong> The App collects location data to power the <strong>destination alarm</strong> and live-tracking features — to wake you before your train reaches your destination station — <strong>even when the App is closed or not in use</strong>. Background location is collected <em>only</em> while a destination alarm or live tracking is active, and stops when the alarm fires, is dismissed, or is turned off.
 </div>
 <ul>
-  <li>Your device's GPS position is processed <strong>on your device</strong> to calculate the distance to your station and to show your position on the map.</li>
-  <li>Location data is <strong>not stored on our servers, not sold, and not shared with third parties</strong>. It is used in real time on your device and discarded.</li>
-  <li>You can revoke location permission at any time in your device settings. The destination alarm and map features will stop working, but the rest of the App remains usable.</li>
+  <li>Your device's GPS position is processed <strong>on your device</strong> to calculate the distance to your destination station, to show your position on the map, and to check whether you are on the train.</li>
+  <li>Location used for the alarm, the map, and on-train detection is processed on your device in real time and is <strong>not stored on our servers or sold to anyone</strong>. The only exception is the optional live-location sharing feature described in section (f), which you must actively turn on.</li>
+  <li>You can revoke location permission at any time in your device settings. The alarm, map, and tracking features will stop working, but the rest of the App remains usable.</li>
 </ul>
 
 <h3>b) PNR and journey information</h3>
 <ul>
-  <li>When you enter a PNR number or train number, it is sent to our railway data provider, <strong>IRCTC1 (via RapidAPI)</strong>, to retrieve booking status, train schedules, and live running status.</li>
-  <li>PNR numbers and saved trips are stored <strong>locally on your device</strong> so you can re-open them quickly. We do not store your PNR or booking details on our own servers.</li>
+  <li>When you enter a PNR number or train number, it is sent through our backend service to our railway data provider to retrieve booking status, train schedules, and live running status.</li>
+  <li>PNR numbers and saved trips are stored <strong>locally on your device</strong> so you can re-open them quickly. We do not store your PNR or booking details on our servers.</li>
 </ul>
 
 <h3>c) Emergency contact</h3>
 <ul>
-  <li>If you save a personal emergency contact for the SOS feature, the name and phone number are stored <strong>only on your device</strong>. They are never uploaded, shared, or transmitted to us or any third party. Tapping the SOS ball opens your phone's dialer to call a helpline or your saved contact; long-pressing it opens your messaging app with a pre-filled text to your saved contact that includes your live GPS location — the App does not send this message itself, and you must tap Send yourself.</li>
+  <li>If you save a personal emergency contact for the SOS feature, the name and phone number are stored <strong>only on your device</strong>. They are never uploaded, shared, or transmitted to us or any third party. Tapping SOS simply opens your phone's dialer.</li>
 </ul>
 
-<h3>d) Device and diagnostic information</h3>
+<h3>d) Platform confirmations (community-contributed)</h3>
 <ul>
-  <li>The App does not use any analytics or crash-reporting service. We do not collect app usage statistics, device identifiers, or crash reports.</li>
+  <li>When you confirm or correct the platform number for a train at a station, that response (train number, station, platform, and your yes/no vote) is sent to our server and combined with other users' responses to show a community-verified platform.</li>
+  <li>This data is <strong>anonymous</strong> — it is not linked to your name, account, or device identity, because RailPulse has no user accounts. We store only the aggregate counts needed to display community confirmations; we do not store who voted.</li>
 </ul>
 
-<h3>e) What we do NOT collect</h3>
+<h3>e) Live location sharing (optional, user-initiated)</h3>
+<div class="callout">
+  <strong>You control this.</strong> Location sharing only happens when you choose to share your live journey. It is never automatic.
+</div>
+<ul>
+  <li>When you tap "Share live location", RailPulse creates a temporary share link and periodically sends the train's current position (latitude and longitude) to our server so that anyone you give the link to can see the train move on a map.</li>
+  <li><strong>Anyone with the link can view the shared position</strong> while the share is active. Only share the link with people you trust.</li>
+  <li>Each share automatically expires after a short period (about 3 hours) and the position data is deleted from our server after it expires. You are not required to create a share to use the rest of the App.</li>
+</ul>
+
+<h3>f) What we do NOT collect</h3>
 <ul>
   <li>We do not collect your name, email, Aadhaar, payment information, contacts list, photos, or messages.</li>
   <li>We do not require an account or sign-up to use the App.</li>
@@ -120,45 +132,47 @@
 <h2>2. How We Use Information</h2>
 <table>
   <tr><th>Data</th><th>Purpose</th><th>Where it is processed</th></tr>
-  <tr><td>Location (foreground)</td><td>Show your position on the map; calculate distance to the next station</td><td>On your device only</td></tr>
+  <tr><td>Location (foreground)</td><td>Show your position on the map; calculate distance to the next station; detect if you are on the train</td><td>On your device only</td></tr>
   <tr><td>Location (background)</td><td>Trigger the destination alarm at your chosen distance</td><td>On your device only</td></tr>
-  <tr><td>PNR / train number</td><td>Fetch booking status, schedules, and live train status</td><td>Sent to IRCTC1 (via RapidAPI)</td></tr>
-  <tr><td>Emergency contact</td><td>One-tap SOS calling and long-press SOS text with your location</td><td>On your device only</td></tr>
-  <tr><td>Map tile requests</td><td>Display the route map background</td><td>Sent to CARTO / OpenStreetMap tile servers</td></tr>
+  <tr><td>PNR / train number</td><td>Fetch booking status, schedules, and live train status</td><td>Sent via our backend to our data provider</td></tr>
+  <tr><td>Emergency contact</td><td>One-tap SOS calling</td><td>On your device only</td></tr>
+  <tr><td>Platform confirmations</td><td>Show community-verified platform numbers</td><td>Stored on our server (anonymous, aggregate)</td></tr>
+  <tr><td>Shared live location</td><td>Let people you choose watch your train's journey via a link</td><td>Stored temporarily on our server; auto-deleted after the share expires</td></tr>
 </table>
 
 <h2>3. Third-Party Services</h2>
 <p>The App uses the following third-party services, each governed by its own privacy policy:</p>
 <ul>
-  <li><strong>IRCTC1 (via RapidAPI)</strong> — railway data (train status, PNR status, schedules). <a href="https://rapidapi.com/privacy">RapidAPI Privacy Policy</a></li>
-  <li><strong>CARTO</strong> — map tile display (the App does not use Google Maps). <a href="https://carto.com/privacy-policy/">CARTO Privacy Policy</a></li>
-  <li><strong>OpenStreetMap</strong> — underlying map data for the tiles above. <a href="https://osmfoundation.org/wiki/Privacy_Policy">OpenStreetMap Foundation Privacy Policy</a></li>
+  <li><strong>Our railway data provider</strong> — railway data (train status, PNR status, schedules), accessed through our backend service.</li>
+  <li><strong>Cloudflare</strong> — hosts our backend service, which proxies railway data requests and stores platform confirmations and temporary live-location shares. <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare Privacy Policy</a></li>
+  <li><strong>Google Maps Platform</strong> — map display and, where used, geolocation. <a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
 </ul>
-<p>Loading a map tile or fetching train data sends your IP address and the relevant request (e.g. tile coordinates, PNR/train number) to that provider's servers, governed by their own privacy policy linked above. We do not control what those providers do with that request beyond fulfilling it.</p>
 <p>We do not sell, rent, or trade your personal information with anyone. We do not share data with advertisers.</p>
 
 <h2>4. Data Storage, Retention, and Deletion</h2>
 <ul>
   <li>Saved trips, PNRs, settings, and your emergency contact live only in the App's local storage on your device.</li>
+  <li>Platform confirmations are stored as anonymous aggregate counts and are not tied to you.</li>
+  <li>Live-location shares are stored only for the life of the share (about 3 hours) and are then automatically deleted from our server.</li>
   <li>You can delete all locally stored data at any time via <em>Settings → Clear App Data</em> inside the App, or by clearing the App's storage / uninstalling the App from your device.</li>
-  <li>Because we do not operate accounts or servers storing your personal data, uninstalling the App removes all data we hold about you on that device.</li>
 </ul>
 
 <h2>5. Security</h2>
-<p>Communication with our data provider occurs over encrypted (HTTPS) connections. Locally stored data is protected by your device's standard app sandboxing. No method of transmission or storage is 100% secure, but we take reasonable measures appropriate to the sensitivity of the data handled.</p>
+<p>Communication with our backend and data provider occurs over encrypted (HTTPS) connections. Locally stored data is protected by your device's standard app sandboxing. No method of transmission or storage is 100% secure, but we take reasonable measures appropriate to the sensitivity of the data handled.</p>
 
 <h2>6. Your Rights and Choices</h2>
 <ul>
   <li><strong>Permissions:</strong> You may grant or revoke location, notification, and other permissions at any time in your device settings.</li>
-  <li><strong>Deletion:</strong> Clear the App's data or uninstall it to erase all locally held information.</li>
-  <li><strong>Grievances (India):</strong> In accordance with applicable Indian law, including the Information Technology Act, 2000 and the Digital Personal Data Protection Act, 2023, you may contact our grievance officer with any concern: <strong>Dillu Atluri</strong>, supportrailpulse@gmail.com. We aim to respond within 30 days.</li>
+  <li><strong>Location sharing:</strong> Live-location sharing is optional and only occurs when you start it. Shares expire automatically.</li>
+  <li><strong>Deletion:</strong> Clear the App's data or uninstall it to erase all locally held information. For any server-held data (such as an active share), contact us and we will assist.</li>
+  <li><strong>Grievances (India):</strong> In accordance with applicable Indian law, including the Information Technology Act, 2000 and the Digital Personal Data Protection Act, 2023, you may contact us with any concern at the email below. We aim to respond within 30 days.</li>
 </ul>
 
 <h2>7. Children's Privacy</h2>
 <p>The App is not directed at children under 13, and we do not knowingly collect personal information from children. If you believe a child has provided personal information through the App, contact us and we will assist in removing it.</p>
 
 <h2>8. Emergency Services Notice</h2>
-<p>The SOS feature places calls through your phone's dialer to helpline numbers (such as railway and medical helplines) or your saved contact, and can pre-fill a text message with your live location to your saved contact through your phone's messaging app. We are not responsible for the availability or response of any helpline, emergency service, or your contact. In a life-threatening emergency, always contact official emergency services directly.</p>
+<p>The SOS feature places calls through your phone's dialer to helpline numbers (such as railway and medical helplines) or your saved contact. We are not responsible for the availability or response of any helpline or emergency service. In a life-threatening emergency, always contact official emergency services directly.</p>
 
 <h2>9. Changes to This Policy</h2>
 <p>We may update this Privacy Policy from time to time. Material changes will be announced within the App, and the "Last updated" date above will be revised. Continued use of the App after changes means you accept the updated policy.</p>
@@ -166,8 +180,8 @@
 <h2>10. Contact Us</h2>
 <p>For questions about this Privacy Policy or your data:</p>
 <p><strong>Dillu Atluri</strong><br>
-Email: <a href="mailto:">supportrailpulse@gmail.com</a><br>
-Address: Tirupati, Andhra Pradesh, India</p>
+Email: <a href="mailto:supportrailpulse@gmail.com">supportrailpulse@gmail.com</a><br>
+Address: Tirupati, Andhra Pradesh, India, 517501</p>
 
 </div>
 </main>
